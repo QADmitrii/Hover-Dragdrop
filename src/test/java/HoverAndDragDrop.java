@@ -7,14 +7,12 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class HoverAndDragDrop {
-
     @BeforeAll
     static void config() {
         Configuration.baseUrl = "https://github.com";
         Configuration.browserPosition = "0x0";
         Configuration.browserSize = "1920x1080";
     }
-
     @Test
     void testHoverTest(){
         open("/");
@@ -23,7 +21,6 @@ public class HoverAndDragDrop {
         webdriver().shouldHave(url("https://github.com/pricing#compare-features"));
         $(".application-main").shouldHave(text("Choose the plan that’s right for you."));
     }
-
     //Test Drag&Drop
     @Test
     void testDragDrop(){
